@@ -7,10 +7,21 @@ export const SubTitle = styled.h2`
   font-size: 32px;
 `;
 export const LargeText = styled.p`
+  margin: 0;
   font-size: 20px;
 `;
 export const LargeTextBold = styled.p`
+  margin: 0;
   font-size: 20px;
+  font-weight: 700;
+`;
+export const BodyText = styled.p`
+  margin: 0;
+  font-size: 16px;
+`;
+export const BodyTextBold = styled.p`
+  margin: 0;
+  font-size: 16px;
   font-weight: 700;
 `;
 export const TinyText = styled.p`

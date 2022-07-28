@@ -1,3 +1,4 @@
+import { Footer } from "components/footer";
 import { Header } from "components/header";
 import { type } from "os";
 import React from "react";
@@ -10,6 +11,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
     <div>
       <Header></Header>
       {children}
+      <Footer></Footer>
     </div>
   );
 };

@@ -16,9 +16,9 @@ export const PrimaryButton = styled(Button)`
   }
 `;
 export const SecondaryButton = styled(Button)`
-  background-color: #023169;
+  background-color: #3c82d6;
   &:hover {
-    background-color: #0050b1;
+    background-color: #78b1f7;
   }
 `;
 export const CancelButton = styled(Button)`

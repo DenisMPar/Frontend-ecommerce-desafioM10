@@ -1,11 +1,18 @@
 import React from "react";
 import { LargeText, SubTitle } from "ui/text";
-import { CardImgtWrapper, CardTextWrapper, CardWrapper } from "./styled";
+import {
+  CardImg,
+  CardImgWrapper,
+  CardTextWrapper,
+  CardWrapper,
+} from "./styled";
 
 export const ProductCard: React.FC = () => {
   return (
     <CardWrapper>
-      <CardImgtWrapper></CardImgtWrapper>
+      <CardImgWrapper>
+        <CardImg src="https://picsum.photos/300/300"></CardImg>
+      </CardImgWrapper>
       <CardTextWrapper>
         <LargeText>Un producto cool</LargeText>
         <SubTitle>$400</SubTitle>

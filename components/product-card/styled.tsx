@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardWrapper = styled.div`
   max-width: 322px;
-  height: 260px;
+  max-height: 322px;
   display: flex;
   flex-direction: column;
   border-radius: 6px;
@@ -10,12 +10,17 @@ export const CardWrapper = styled.div`
   border-color: rgba(0, 0, 0, 0.5);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
-export const CardImgtWrapper = styled.div`
+export const CardImgWrapper = styled.div`
   height: 100%;
+  max-height: 237px;
+`;
+export const CardImg = styled.img`
+  height: 100%;
+  width: 100%;
 `;
 export const CardTextWrapper = styled.div`
   height: 84px;
-  background-color: #f2e8cf;
+  background-color: #e8e9eb;
   display: flex;
   justify-content: space-between;
   align-items: center;

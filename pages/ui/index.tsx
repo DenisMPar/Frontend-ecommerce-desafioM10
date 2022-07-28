@@ -3,7 +3,15 @@ import type { NextPage } from "next";
 import { CancelButton, PrimaryButton, SecondaryButton } from "ui/buttons";
 import { LogoIcon } from "ui/icons";
 import Input from "ui/input";
-import { LargeText, LargeTextBold, SubTitle, TinyText, Title } from "ui/text";
+import {
+  BodyText,
+  BodyTextBold,
+  LargeText,
+  LargeTextBold,
+  SubTitle,
+  TinyText,
+  Title,
+} from "ui/text";
 
 const Ui: NextPage = () => {
   return (
@@ -20,6 +28,8 @@ const Ui: NextPage = () => {
       <SubTitle>Subtitle</SubTitle>
       <LargeText>Large</LargeText>
       <LargeTextBold>Large bold</LargeTextBold>
+      <BodyText>Body text </BodyText>
+      <BodyTextBold>Body text bold</BodyTextBold>
       <TinyText>Tiny</TinyText>
       <PrimaryButton>Comprar</PrimaryButton>
       <CancelButton>Cancel</CancelButton>
