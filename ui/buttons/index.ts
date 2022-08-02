@@ -21,6 +21,12 @@ export const SecondaryButton = styled(Button)`
     background-color: #78b1f7;
   }
 `;
+export const TertiaryButton = styled(Button)`
+  background-color: #ec8d35;
+  &:hover {
+    background-color: #ffac5f;
+  }
+`;
 export const CancelButton = styled(Button)`
   background-color: #bc4749;
   &:hover {

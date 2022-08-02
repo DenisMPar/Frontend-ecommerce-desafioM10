@@ -9,8 +9,10 @@ type Props = {
 export const MainSection: React.FC<Props> = ({ children }) => {
   return (
     <MainSectionWrapper>
-      <Title>El mejor e-commerce</Title>
-      <SearchForm></SearchForm>
+      <Title>
+        El mejor <br></br> e-commerce
+      </Title>
+      <SearchForm type="primary"></SearchForm>
     </MainSectionWrapper>
   );
 };

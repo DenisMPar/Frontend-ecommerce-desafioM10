@@ -1,12 +1,34 @@
-import React from "react";
+import { SearchForm } from "components/search-form";
+import { SideBar } from "components/side-bar";
+import { type } from "os";
+import React, { useState } from "react";
 import { BurguerIcon, LogoIcon, WhiteLogoIcon } from "ui/icons";
-import { HeaderWrapper } from "./styled";
+import { BaseHeader, FormWrapper, LogoAndButtonWrapper } from "./styled";
 
-export const Header: React.FC = () => {
+type Props = {
+  form: boolean;
+};
+
+export const Header: React.FC<Props> = (props) => {
+  const [flag, setFlag] = useState(false);
+
+  function toggleMenu() {
+    setFlag(!flag);
+  }
   return (
-    <HeaderWrapper>
-      <WhiteLogoIcon></WhiteLogoIcon>
-      <BurguerIcon></BurguerIcon>
-    </HeaderWrapper>
+    <BaseHeader>
+      <LogoAndButtonWrapper>
+        <WhiteLogoIcon></WhiteLogoIcon>
+        <div onClick={toggleMenu}>
+          <BurguerIcon></BurguerIcon>
+        </div>
+      </LogoAndButtonWrapper>
+      {props.form ? (
+        <FormWrapper>
+          <SearchForm type="secondary"></SearchForm>
+        </FormWrapper>
+      ) : null}
+      <SideBar toggle={toggleMenu} show={flag}></SideBar>
+    </BaseHeader>
   );
 };

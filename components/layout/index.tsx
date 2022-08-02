@@ -5,11 +5,12 @@ import React from "react";
 
 type Props = {
   children?: React.ReactNode;
+  form: boolean;
 };
-export const Layout: React.FC<Props> = ({ children }) => {
+export const Layout: React.FC<Props> = ({ children, form }) => {
   return (
     <div>
-      <Header></Header>
+      <Header form={form}></Header>
       {children}
       <Footer></Footer>
     </div>
