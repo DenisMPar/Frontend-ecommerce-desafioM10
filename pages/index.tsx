@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <Layout form={false}>
+    <Layout form={false} sticky={true}>
       <HomePage></HomePage>
     </Layout>
   );

@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const BaseHeader = styled.header`
   width: 100%;
-  position: fixed;
+  top: 0px;
   display: flex;
   flex-direction: column;
-  margin-bottom: -84px;
   background-color: #313638;
 `;
 export const LogoAndButtonWrapper = styled.div`

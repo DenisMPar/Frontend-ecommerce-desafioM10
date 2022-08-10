@@ -6,3 +6,6 @@ Layout, home page y featured section terminados (movil)
 
 beta 1.2
 Se agregaron animaciones al sideBar, se agrego el header con form, se agrego el color secundario de form.
+
+beta 1.3
+Se termino la pagina de detail y search

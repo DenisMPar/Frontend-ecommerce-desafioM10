@@ -7,6 +7,7 @@ import { BaseHeader, FormWrapper, LogoAndButtonWrapper } from "./styled";
 
 type Props = {
   form: boolean;
+  sticky?: boolean;
 };
 
 export const Header: React.FC<Props> = (props) => {
@@ -16,7 +17,7 @@ export const Header: React.FC<Props> = (props) => {
     setFlag(!flag);
   }
   return (
-    <BaseHeader>
+    <BaseHeader style={{ position: props.sticky ? "sticky" : "static" }}>
       <LogoAndButtonWrapper>
         <WhiteLogoIcon></WhiteLogoIcon>
         <div onClick={toggleMenu}>

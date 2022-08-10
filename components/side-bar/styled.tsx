@@ -67,6 +67,8 @@ export const SideBtnWrap = styled.div`
 `;
 
 export const UserSessionWrapper = styled(animated.div)`
+  margin: 0 auto;
+  max-width: 125px;
   position: relative;
   display: flex;
   flex-direction: column;
