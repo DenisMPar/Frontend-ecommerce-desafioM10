@@ -9,3 +9,9 @@ Se agregaron animaciones al sideBar, se agrego el header con form, se agrego el 
 
 beta 1.3
 Se termino la pagina de detail y search
+
+beta 1.4
+Se agregaron las paginas y componentes de login
+
+beta 1.5
+Se agrego la pagina profile, mauqetado movil terminado
