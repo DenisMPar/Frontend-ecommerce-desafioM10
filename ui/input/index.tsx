@@ -10,7 +10,7 @@ const Input: React.FC<props> = (props) => {
   return (
     <Label style={{ display: "flex", flexDirection: "column" }}>
       {props.label}
-      <BaseInput placeholder={props.placeHolder}></BaseInput>
+      <BaseInput placeholder={props.placeHolder} name={props.label}></BaseInput>
     </Label>
   );
 };

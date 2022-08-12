@@ -11,6 +11,7 @@ const Button = styled.button`
   font-weight: 700;
   cursor: pointer;
 `;
+
 export const PrimaryButton = styled(Button)`
   background-color: #6a994e;
   &:hover {

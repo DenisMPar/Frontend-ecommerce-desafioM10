@@ -25,5 +25,6 @@ export const BodyTextBold = styled.p`
   font-weight: 700;
 `;
 export const TinyText = styled.p`
+  margin: 0;
   font-size: 12px;
 `;
