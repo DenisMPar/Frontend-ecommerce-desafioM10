@@ -12,8 +12,15 @@ import {
   TinyText,
   Title,
 } from "ui/text";
+import { useForm } from "react-hook-form";
 
 const Ui: NextPage = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
   return (
     <div
       style={{
@@ -34,7 +41,7 @@ const Ui: NextPage = () => {
       <PrimaryButton>Comprar</PrimaryButton>
       <CancelButton>Cancel</CancelButton>
       <SecondaryButton>Secondary</SecondaryButton>
-      <Input label="Input" placeHolder="Input"></Input>
+      <Input register={register} name="input" placeHolder="Input"></Input>
       <ProductCard></ProductCard>
     </div>
   );

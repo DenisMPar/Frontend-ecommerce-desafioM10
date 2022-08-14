@@ -8,28 +8,37 @@ import {
   LoginFormWrapper,
   LoginInputWrapper,
 } from "./styled";
+import { useForm } from "react-hook-form";
 
 type Props = {
   children?: React.ReactNode;
   type: "mail" | "code";
-  submit: (e: any) => void;
+  submit: (data: any, event: any) => void;
 };
 export const LoginForm: React.FC<Props> = (props) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm();
+
   return (
     <>
       {props.type == "mail" ? (
-        <LoginFormWrapper onSubmit={props.submit}>
+        <LoginFormWrapper onSubmit={handleSubmit(props.submit)}>
           <LoginInputWrapper>
-            <Input label="Email"></Input>
+            <Input name="email" label="Email" register={register}></Input>
           </LoginInputWrapper>
           <LoginButtonWrapper>
             <PrimaryButton>Continuar</PrimaryButton>
           </LoginButtonWrapper>
         </LoginFormWrapper>
       ) : (
-        <LoginFormWrapper>
+        <LoginFormWrapper onSubmit={handleSubmit(props.submit)}>
           <CodeInputWrapper>
-            <Input></Input>
+            <Input name="code" label="Codigo" register={register}></Input>
           </CodeInputWrapper>
           <TinyText>Te enviamos un código al mail</TinyText>
           <LoginButtonWrapper>

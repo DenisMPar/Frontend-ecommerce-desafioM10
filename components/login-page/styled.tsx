@@ -4,3 +4,8 @@ export const LoginPageWrapper = styled.div`
   height: calc(100vh - 384px);
   padding: 20px;
 `;
+export const LoginLoadersWrapper = styled.div`
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+`;

@@ -7,22 +7,29 @@ import {
   ProfileFormWrapper,
   ProfileInputWrapper,
 } from "./styled";
+import { useForm } from "react-hook-form";
 
 type Props = {
   children?: React.ReactNode;
   submit?: (e: any) => void;
 };
 export const ProfileForm: React.FC<Props> = (props) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
   return (
     <ProfileFormWrapper onSubmit={props.submit}>
       <ProfileInputWrapper>
-        <Input label="Nombre"></Input>
+        <Input name="name" register={register} label="Nombre"></Input>
       </ProfileInputWrapper>
       <ProfileInputWrapper>
-        <Input label="Direccion"></Input>
+        <Input name="direction" register={register} label="Direccion"></Input>
       </ProfileInputWrapper>
       <ProfileInputWrapper>
-        <Input label="Telefono"></Input>
+        <Input name="phone" register={register} label="Telefono"></Input>
       </ProfileInputWrapper>
       <ProfileButtonWrapper>
         <PrimaryButton>Continuar</PrimaryButton>
