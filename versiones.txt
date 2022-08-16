@@ -15,3 +15,6 @@ Se agregaron las paginas y componentes de login
 
 beta 1.5
 Se agrego la pagina profile, mauqetado movil terminado
+
+beta 1.6
+Se agrego toda la logica para loguear al user, falta setear el mail en un estado para poder recibirlo en el menu que muestra al user logueado. Posible solucion: Recoil

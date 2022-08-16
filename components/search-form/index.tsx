@@ -7,8 +7,15 @@ import { useForm } from "react-hook-form";
 type Props = {
   children?: React.ReactNode;
   type: "primary" | "secondary";
+  submit: (data: any) => any;
+  value?: string;
 };
-export const SearchForm: React.FC<Props> = ({ children, type }) => {
+export const SearchForm: React.FC<Props> = ({
+  children,
+  type,
+  submit,
+  value,
+}) => {
   const {
     register,
     handleSubmit,
@@ -16,8 +23,9 @@ export const SearchForm: React.FC<Props> = ({ children, type }) => {
     formState: { errors },
   } = useForm();
   return (
-    <BaseForm>
+    <BaseForm onSubmit={handleSubmit(submit)} autoComplete={"off"}>
       <Input
+        default={value}
         name="query"
         label=""
         register={register}

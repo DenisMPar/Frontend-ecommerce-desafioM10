@@ -5,6 +5,7 @@ type props = {
   name: string;
   label?: string;
   placeHolder?: string;
+  default?: string;
   register: UseFormRegister<FieldValues>;
 };
 
@@ -15,6 +16,7 @@ const Input: React.FC<props> = (props) => {
     <Label style={{ display: "flex", flexDirection: "column" }}>
       {props.label}
       <BaseInput
+        defaultValue={props.default || ""}
         placeholder={props.placeHolder}
         {...register(props.name)}
       ></BaseInput>

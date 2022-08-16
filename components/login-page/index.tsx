@@ -18,14 +18,10 @@ export const LoginPage: React.FC<Props> = ({ children }) => {
   async function handleSubmit(data: any, e: any) {
     setError(false);
     setLoading(true);
-
     let res;
-
     if (data.email && !data.code) res = await getAuth({ email: data.email });
-
     if (data.email && data.code)
       res = await getToken({ email: mail, code: parseInt(data.code) });
-
     if (res.error) {
       setLoading(false);
       setError(true);
