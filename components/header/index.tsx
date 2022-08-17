@@ -1,6 +1,6 @@
 import { SearchForm } from "components/search-form";
 import { SideBar } from "components/side-bar";
-import { queryState } from "hooks/hooks";
+
 import { type } from "os";
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
@@ -14,7 +14,6 @@ type Props = {
 
 export const Header: React.FC<Props> = (props) => {
   const [flag, setFlag] = useState(false);
-  const query = useRecoilValue(queryState);
 
   function handleSubmit() {
     console.log("submit form");
@@ -33,11 +32,7 @@ export const Header: React.FC<Props> = (props) => {
       </LogoAndButtonWrapper>
       {props.form ? (
         <FormWrapper>
-          <SearchForm
-            value={query}
-            submit={handleSubmit}
-            type="secondary"
-          ></SearchForm>
+          <SearchForm submit={handleSubmit} type="secondary"></SearchForm>
         </FormWrapper>
       ) : null}
       <SideBar toggle={toggleMenu} show={flag}></SideBar>

@@ -6,16 +6,20 @@ import {
   CardTextWrapper,
   CardWrapper,
 } from "./styled";
-
-export const ProductCard: React.FC = () => {
+type Props = {
+  url: string;
+  title: string;
+  price: number;
+};
+export const ProductCard: React.FC<Props> = (props) => {
   return (
     <CardWrapper>
       <CardImgWrapper>
-        <CardImg src="https://picsum.photos/300/300"></CardImg>
+        <CardImg src={props.url}></CardImg>
       </CardImgWrapper>
       <CardTextWrapper>
-        <LargeText>Un producto cool</LargeText>
-        <SubTitle>$400</SubTitle>
+        <LargeText>{props.title}</LargeText>
+        <SubTitle>${props.price}</SubTitle>
       </CardTextWrapper>
     </CardWrapper>
   );

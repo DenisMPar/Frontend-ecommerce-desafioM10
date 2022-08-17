@@ -18,3 +18,9 @@ Se agrego la pagina profile, mauqetado movil terminado
 
 beta 1.6
 Se agrego toda la logica para loguear al user, falta setear el mail en un estado para poder recibirlo en el menu que muestra al user logueado. Posible solucion: Recoil
+
+beta 1.7
+Agregada la logica en main para mostrar el query en el form de la page search, agregado recoil. sigue faltando la parte del mail
+
+beta 1.8
+Se quito la logica para mostrar el query, se agrego swr y la logica de busqueda de productos, falta poner la parte de pagination (Revisar el retorno de items sin stock del back)

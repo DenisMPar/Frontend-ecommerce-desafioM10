@@ -11,10 +11,9 @@ type Props = {
 };
 export const MainSection: React.FC<Props> = ({ children }) => {
   const router = useRouter();
-  const setQuery = useSetRecoilState(queryState);
+
   function handleSubmit(data: any) {
     if (data.query) {
-      setQuery(data.query);
       router.push("/search/" + data.query);
     }
   }

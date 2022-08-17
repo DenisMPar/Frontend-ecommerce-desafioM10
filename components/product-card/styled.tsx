@@ -11,8 +11,8 @@ export const CardWrapper = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 export const CardImgWrapper = styled.div`
-  height: 100%;
-  max-height: 237px;
+  height: 237px;
+  width: 322px;
 `;
 export const CardImg = styled.img`
   height: 100%;
