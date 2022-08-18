@@ -1,4 +1,8 @@
+import { userMailState } from "hooks/hooks";
+import { removeToken, setToken } from "lib/api";
+import { useRouter } from "next/router";
 import { useTransition, useSpring } from "react-spring";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { on } from "stream";
 import { CancelButton, PrimaryButton, SecondaryButton } from "ui/buttons";
 import { TinyText } from "ui/text";
@@ -18,7 +22,9 @@ type props = {
 };
 
 export const SideBar = (props: props) => {
-  const onSession = true;
+  const [userMail, setUserMail] = useRecoilState(userMailState);
+  const router = useRouter();
+
   const menuTranstition = useTransition(props.show, {
     from: { opacity: 0, top: `-100%` },
     enter: { opacity: 1, top: `0` },
@@ -37,6 +43,13 @@ export const SideBar = (props: props) => {
     leave: { opacity: 0, bottom: `-100%` },
     config: { duration: 650 },
   });
+  function handleRedirectToLogin() {
+    router.push("/login");
+  }
+  function handleLogOut() {
+    setUserMail("");
+    removeToken();
+  }
   return (
     <>
       {menuTranstition((style, item) =>
@@ -63,14 +76,18 @@ export const SideBar = (props: props) => {
             {userSessionTransition((style, item) =>
               item ? (
                 <>
-                  {onSession ? (
+                  {userMail ? (
                     <UserSessionWrapper style={style}>
-                      <TinyText>mail@user</TinyText>
-                      <CancelButton>Cerrar sesion</CancelButton>
+                      <TinyText>{userMail}</TinyText>
+                      <CancelButton onClick={handleLogOut}>
+                        Cerrar sesion
+                      </CancelButton>
                     </UserSessionWrapper>
                   ) : (
                     <UserSessionWrapper style={style}>
-                      <PrimaryButton>Iniciar sesion</PrimaryButton>
+                      <PrimaryButton onClick={handleRedirectToLogin}>
+                        Iniciar sesion
+                      </PrimaryButton>
                     </UserSessionWrapper>
                   )}
                 </>

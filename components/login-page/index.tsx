@@ -1,7 +1,9 @@
 import { LoginForm } from "components/login-form";
-import { getAuth, getToken } from "lib/api";
+import { useCheckToken, userMailState } from "hooks/hooks";
+import { getAuth, getSettedToken, getToken, setToken } from "lib/api";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 import { Spinner } from "ui/loader";
 import { Title } from "ui/text";
 import { LoginLoadersWrapper, LoginPageWrapper } from "./styled";
@@ -11,10 +13,13 @@ type Props = {
 };
 export const LoginPage: React.FC<Props> = ({ children }) => {
   const router = useRouter();
+  const token = useCheckToken();
   const [mail, setMail] = useState("");
   const [showCodePage, setShowCodePage] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loggedUser, setLoggedUser] = useRecoilState(userMailState);
+
   async function handleSubmit(data: any, e: any) {
     setError(false);
     setLoading(true);
@@ -26,6 +31,8 @@ export const LoginPage: React.FC<Props> = ({ children }) => {
       setLoading(false);
       setError(true);
     } else if (res.token) {
+      setLoggedUser(data.email);
+
       router.push("/");
     } else {
       setError(false);
@@ -36,13 +43,19 @@ export const LoginPage: React.FC<Props> = ({ children }) => {
     }
   }
   return (
-    <LoginPageWrapper>
-      {!showCodePage ? <Title>Ingresar</Title> : <Title>Código</Title>}
-      <LoginForm submit={handleSubmit} type={mail ? "code" : "mail"} />
-      <LoginLoadersWrapper>
-        {loading && <Spinner></Spinner>}
-        {error && <span>Algo salio mal</span>}
-      </LoginLoadersWrapper>
-    </LoginPageWrapper>
+    <>
+      {token ? (
+        <div>Ya tienes una sesión activa</div>
+      ) : (
+        <LoginPageWrapper>
+          {!showCodePage ? <Title>Ingresar</Title> : <Title>Código</Title>}
+          <LoginForm submit={handleSubmit} type={mail ? "code" : "mail"} />
+          <LoginLoadersWrapper>
+            {loading && <Spinner></Spinner>}
+            {error && <span>Algo salio mal</span>}
+          </LoginLoadersWrapper>
+        </LoginPageWrapper>
+      )}
+    </>
   );
 };

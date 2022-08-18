@@ -50,8 +50,6 @@ type TokenProps = {
   code: number;
 };
 export async function getToken(body: TokenProps) {
-  console.log("body", body);
-
   try {
     const res = await fetchApi("/auth/token", {
       method: "POST",
@@ -71,6 +69,9 @@ export async function getToken(body: TokenProps) {
 export function setToken(token: string) {
   localStorage.setItem("token", token);
 }
-export function getSettedToken() {
-  return localStorage.getItem("token");
+export async function getSettedToken() {
+  return await localStorage.getItem("token");
+}
+export function removeToken() {
+  localStorage.removeItem("token");
 }

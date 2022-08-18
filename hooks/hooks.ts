@@ -1,7 +1,30 @@
-import { atom, selector, useRecoilState, useRecoilValue } from "recoil";
-import useSWR from "swr";
+import { getSettedToken } from "lib/api";
+import { useEffect, useState } from "react";
+import {
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+  useSetRecoilState,
+} from "recoil";
+import { recoilPersist } from "recoil-persist";
 
-export const queryState = atom({
-  key: "queryState", // unique ID (with respect to other atoms/selectors)
-  default: "", // default value (aka initial value)
+const { persistAtom } = recoilPersist();
+
+export const userMailState = atom({
+  key: "userMailState",
+  default: "",
+  effects_UNSTABLE: [persistAtom],
 });
+
+export function useCheckToken() {
+  const [token, setToken] = useState("" as any);
+  useEffect(() => {
+    async function checkToken() {
+      const token = await getSettedToken();
+      setToken(token);
+    }
+    checkToken();
+  }, []);
+  return token;
+}
