@@ -13,8 +13,16 @@ export const FeaturedSection: React.FC<Props> = ({ children }) => {
         <SubTitle>Productos Destacados</SubTitle>
       </SectionTitleWrapper>
       <CardsWrapper>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
+        <ProductCard
+          price={400}
+          url={"https://picsum.photos/300/400"}
+          title="Un Producto"
+        ></ProductCard>
+        <ProductCard
+          price={400}
+          url={"https://picsum.photos/300/400"}
+          title="Un Producto"
+        ></ProductCard>
       </CardsWrapper>
     </FeaturedWrapper>
   );

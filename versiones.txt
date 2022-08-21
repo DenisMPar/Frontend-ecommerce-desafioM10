@@ -27,3 +27,9 @@ Se quito la logica para mostrar el query, se agrego swr y la logica de busqueda 
 
 beta 1.9
 Se agrego la logica para mostrar el mail en el menu, el seteo del token y el cierre de session. Chekcear si recoil persist es realmente necesario
+
+beta 2.0
+Se quito el boton de inicar sesion en el menu, se agrego la logica al buscador del header para buscar productos
+
+beta 2.1
+Se agrego la logica del paginado

@@ -3,7 +3,11 @@ import { MainSection } from "components/main-section";
 import { ProductCard } from "components/product-card";
 import React, { useState } from "react";
 import { BodyText, TinyText } from "ui/text";
-import { ProductsCardWrapper, SearchWrapper } from "./styled";
+import {
+  ProductsCardPagesWrapper,
+  ProductsCardWrapper,
+  SearchWrapper,
+} from "./styled";
 import useSWR from "swr";
 import { fetchApi } from "lib/api";
 
@@ -13,13 +17,22 @@ type Props = {
 };
 export const SearchPage: React.FC<Props> = ({ children, query }) => {
   const [page, setPage] = useState(0);
+  const [offset, setOffset] = useState(0);
   const { data, error, mutate } = useSWR(
-    "/search?q=" + query + "&offset=" + page + "&limit=3",
+    "/search?q=" + query + "&offset=" + offset + "&limit=3",
     fetchApi
   );
-  console.log(data);
 
   const results = data?.results;
+
+  function nextPage() {
+    const total = data?.pagination.total;
+    const pages = Math.floor(total / 3);
+    if (page < pages) {
+      setPage(page + 1);
+      setOffset(offset + 3);
+    }
+  }
 
   return (
     <SearchWrapper>
@@ -43,6 +56,11 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
           )}
         </ProductsCardWrapper>
       )}
+      {data ? (
+        <ProductsCardPagesWrapper onClick={nextPage}>
+          Ver mas
+        </ProductsCardPagesWrapper>
+      ) : null}
     </SearchWrapper>
   );
 };
