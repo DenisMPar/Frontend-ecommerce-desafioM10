@@ -1,5 +1,6 @@
 import { userMailState } from "hooks/hooks";
 import { removeToken, setToken } from "lib/api";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTransition, useSpring } from "react-spring";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
@@ -63,11 +64,19 @@ export const SideBar = (props: props) => {
                 item ? (
                   <>
                     <SideBarMenu style={style}>
-                      <SidebarLink onClick={props.toggle}>Ingresar</SidebarLink>
-                      <SidebarLink onClick={props.toggle}>
-                        Mi perfil
-                      </SidebarLink>
-                      <SidebarLink onClick={props.toggle}>Buscar</SidebarLink>
+                      <Link href="/login">
+                        <SidebarLink onClick={props.toggle}>
+                          Ingresar
+                        </SidebarLink>
+                      </Link>
+                      <Link href="/user">
+                        <SidebarLink onClick={props.toggle}>
+                          Mi perfil
+                        </SidebarLink>
+                      </Link>
+                      <Link href="/">
+                        <SidebarLink onClick={props.toggle}>Buscar</SidebarLink>
+                      </Link>
                     </SideBarMenu>
                   </>
                 ) : null
@@ -83,13 +92,13 @@ export const SideBar = (props: props) => {
                         Cerrar sesion
                       </CancelButton>
                     </UserSessionWrapper>
-                  ) : (
-                    <UserSessionWrapper style={style}>
-                      <PrimaryButton onClick={handleRedirectToLogin}>
-                        Iniciar sesion
-                      </PrimaryButton>
-                    </UserSessionWrapper>
-                  )}
+                  ) : null
+                  // <UserSessionWrapper style={style}>
+                  //   <PrimaryButton onClick={handleRedirectToLogin}>
+                  //     Iniciar sesion
+                  //   </PrimaryButton>
+                  // </UserSessionWrapper>
+                  }
                 </>
               ) : null
             )}

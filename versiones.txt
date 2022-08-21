@@ -24,3 +24,6 @@ Agregada la logica en main para mostrar el query en el form de la page search, a
 
 beta 1.8
 Se quito la logica para mostrar el query, se agrego swr y la logica de busqueda de productos, falta poner la parte de pagination (Revisar el retorno de items sin stock del back)
+
+beta 1.9
+Se agrego la logica para mostrar el mail en el menu, el seteo del token y el cierre de session. Chekcear si recoil persist es realmente necesario

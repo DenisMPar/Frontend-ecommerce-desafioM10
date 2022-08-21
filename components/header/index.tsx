@@ -1,5 +1,6 @@
 import { SearchForm } from "components/search-form";
 import { SideBar } from "components/side-bar";
+import { useRouter } from "next/router";
 
 import { type } from "os";
 import React, { useState } from "react";
@@ -14,9 +15,9 @@ type Props = {
 
 export const Header: React.FC<Props> = (props) => {
   const [flag, setFlag] = useState(false);
-
-  function handleSubmit() {
-    console.log("submit form");
+  const router = useRouter();
+  function handleSubmit(data: any) {
+    if (data.query) router.push("/search/" + data.query);
   }
 
   function toggleMenu() {
