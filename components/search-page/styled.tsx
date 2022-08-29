@@ -19,5 +19,12 @@ export const ProductsCardWrapper = styled.div`
 export const ProductsCardPagesWrapper = styled.div`
   width: 100%;
   display: flex;
+  gap: 10px;
+  justify-content: center;
+`;
+export const PageNumber = styled.div`
+  width: 20px;
+  border-radius: 4px;
+  display: flex;
   justify-content: center;
 `;

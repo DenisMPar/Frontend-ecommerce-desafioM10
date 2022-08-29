@@ -33,3 +33,8 @@ Se quito el boton de inicar sesion en el menu, se agrego la logica al buscador d
 
 beta 2.1
 Se agrego la logica del paginado
+
+beta 2.2
+Se agrego la lógica a la página de detalles para que muestre productos reales.
+Se agrego la pagina de perfil, con toda la logica de submit de la data
+Se agrego un componente redirect to login, que muestra un redirect en caso que el user entre en una page que necesita esta loggeado 

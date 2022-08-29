@@ -42,7 +42,6 @@ const Ui: NextPage = () => {
       <CancelButton>Cancel</CancelButton>
       <SecondaryButton>Secondary</SecondaryButton>
       <Input register={register} name="input" placeHolder="Input"></Input>
-      <ProductCard></ProductCard>
     </div>
   );
 };

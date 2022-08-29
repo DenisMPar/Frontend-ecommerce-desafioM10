@@ -4,7 +4,7 @@ export const ProfileFormWrapper = styled.form`
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 20px;
 `;
 export const ProfileInputWrapper = styled.div`
   height: 60px;

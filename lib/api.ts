@@ -1,10 +1,12 @@
+import { type } from "os";
+
 interface Options extends RequestInit {
   headers?: (Headers & { Authorization: string }) | {};
   body?: string;
 }
 
 export async function fetchApi(input: RequestInfo, options?: Options) {
-  const token = getSettedToken();
+  const token = await getSettedToken();
   const formattedOptions = options || {};
   if (token) {
     formattedOptions.headers = {
@@ -65,6 +67,17 @@ export async function getToken(body: TokenProps) {
     return error;
   }
 }
+export async function getOrderUrl(id: string) {
+  try {
+    const url = await fetchApi("/order?productId=" + id, {
+      method: "POST",
+    });
+    // const json = await url.json()
+    return url;
+  } catch (error) {
+    throw error;
+  }
+}
 
 export function setToken(token: string) {
   localStorage.setItem("token", token);
@@ -74,4 +87,24 @@ export async function getSettedToken() {
 }
 export function removeToken() {
   localStorage.removeItem("token");
+}
+type UserData = {
+  name: string;
+  address: string;
+  phone: number;
+};
+
+export async function patchUserData(body: UserData) {
+  try {
+    const res = await fetchApi("/me", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    return res;
+  } catch (error) {
+    return false;
+  }
 }
