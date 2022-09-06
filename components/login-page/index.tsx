@@ -33,7 +33,7 @@ export const LoginPage: React.FC<Props> = ({ children }) => {
     } else if (res.token) {
       setLoggedUser(data.email);
 
-      router.push("/");
+      router.push("/profile");
     } else {
       setError(false);
       setMail(data.email);

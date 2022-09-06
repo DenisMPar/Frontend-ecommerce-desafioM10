@@ -1,10 +1,11 @@
 import { fetchApi, getOrderUrl, getSettedToken } from "lib/api";
+
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { arrayBuffer } from "stream/consumers";
 import useSWR from "swr";
 import { PrimaryButton } from "ui/buttons";
-import { Spinner } from "ui/loader";
+import { PageLoader, Spinner } from "ui/loader";
 import { BodyText, LargeTextBold, SubTitle, Title } from "ui/text";
 import {
   DetailDescriptionWrapper,
@@ -13,6 +14,7 @@ import {
   DetailImg,
   DetailButtonWrapper,
   ProductDetailTitle,
+  NotFoundWrapper,
 } from "./styled";
 
 type Props = {
@@ -69,7 +71,15 @@ export const ProductDetailPage: React.FC<Props> = (props) => {
           </DetailDescriptionWrapper>
         </DetailWrapper>
       ) : (
-        <div>Loading</div>
+        <>
+          {error ? (
+            <NotFoundWrapper>
+              <SubTitle>Producto no encontrado</SubTitle>
+            </NotFoundWrapper>
+          ) : (
+            <PageLoader></PageLoader>
+          )}
+        </>
       )}
     </>
   );

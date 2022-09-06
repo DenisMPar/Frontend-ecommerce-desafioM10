@@ -4,23 +4,44 @@ import WhiteLogo from "./white-logo.svg";
 import Burguer from "./burguer.svg";
 import { FiTwitter } from "react-icons/fi";
 import { AiOutlineInstagram } from "react-icons/ai";
+import { BaseIcon } from "./styled";
 
 type Props = {
   className?: string;
 };
 
 export function LogoIcon({ className }: Props): ReactElement {
-  return <Logo className={className}></Logo>;
+  return (
+    <BaseIcon>
+      <Logo className={className}></Logo>
+    </BaseIcon>
+  );
 }
 export function WhiteLogoIcon({ className }: Props): ReactElement {
-  return <WhiteLogo className={className}></WhiteLogo>;
+  return (
+    <BaseIcon>
+      <WhiteLogo className={className}></WhiteLogo>
+    </BaseIcon>
+  );
 }
 export function BurguerIcon({ className }: Props): ReactElement {
-  return <Burguer className={className}></Burguer>;
+  return (
+    <BaseIcon>
+      <Burguer className={className}></Burguer>
+    </BaseIcon>
+  );
 }
 export function TwitterIcon({ className }: Props): ReactElement {
-  return <FiTwitter className={className}></FiTwitter>;
+  return (
+    <BaseIcon>
+      <FiTwitter className={className}></FiTwitter>
+    </BaseIcon>
+  );
 }
 export function InstagramIcon({ className }: Props): ReactElement {
-  return <AiOutlineInstagram className={className}></AiOutlineInstagram>;
+  return (
+    <BaseIcon>
+      <AiOutlineInstagram className={className}></AiOutlineInstagram>
+    </BaseIcon>
+  );
 }

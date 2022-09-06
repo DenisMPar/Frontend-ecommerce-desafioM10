@@ -21,7 +21,6 @@ const Input: React.FC<props> = (props) => {
     <Label style={{ display: "flex", flexDirection: "column" }}>
       {props.label}
       <BaseInput
-        // value={props.default || ""}
         placeholder={props.placeHolder}
         {...register(props.name, {
           required: props.required,

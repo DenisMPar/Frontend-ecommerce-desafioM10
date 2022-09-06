@@ -7,6 +7,13 @@ export const DetailWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
+export const NotFoundWrapper = styled.div`
+  width: 100%;
+  height: calc(100vh - 510px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 export const DetailImgWrapper = styled.div`
   height: 100%;
 `;

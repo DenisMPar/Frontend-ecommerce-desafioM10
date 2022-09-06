@@ -1,4 +1,5 @@
 import css from "./Index.module.css";
+import { FaSpinner } from "react-icons/fa";
 
 //componente que muestra un spinner de carga
 function Spinner() {
@@ -8,5 +9,12 @@ function Spinner() {
     </div>
   );
 }
+function PageLoader() {
+  return (
+    <div className={css["wrapper-big"]}>
+      <div className={css["lds-dual-ring-big"]}></div>
+    </div>
+  );
+}
 
-export { Spinner };
+export { Spinner, PageLoader };

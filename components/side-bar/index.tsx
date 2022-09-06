@@ -69,7 +69,7 @@ export const SideBar = (props: props) => {
                           Ingresar
                         </SidebarLink>
                       </Link>
-                      <Link href="/user">
+                      <Link href="/profile">
                         <SidebarLink onClick={props.toggle}>
                           Mi perfil
                         </SidebarLink>
@@ -92,13 +92,7 @@ export const SideBar = (props: props) => {
                         Cerrar sesion
                       </CancelButton>
                     </UserSessionWrapper>
-                  ) : null
-                  // <UserSessionWrapper style={style}>
-                  //   <PrimaryButton onClick={handleRedirectToLogin}>
-                  //     Iniciar sesion
-                  //   </PrimaryButton>
-                  // </UserSessionWrapper>
-                  }
+                  ) : null}
                 </>
               ) : null
             )}

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
+  cursor: pointer;
   max-width: 322px;
   max-height: 322px;
   display: flex;
@@ -9,7 +10,14 @@ export const CardWrapper = styled.div`
   /* border: solid 1px; */
   border-color: rgba(0, 0, 0, 0.5);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px;
+  }
+  &:active {
+    box-shadow: #f09d51 0px 5px 15px;
+  }
 `;
+
 export const CardImgWrapper = styled.div`
   height: 237px;
   width: 322px;

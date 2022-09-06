@@ -25,6 +25,8 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
   );
 
   const results = data?.results;
+  console.log(data);
+
   //recibo el numero de pag
   function goToPage(page: number) {
     let newOffset = 0;
@@ -42,13 +44,15 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
   function generatePages() {
     //checkeo el total de productos
     const total = data?.pagination.total;
+
     //obtengo el total de paginas dividiendo por 3 productos por pagina
     const pages = Math.floor(total / 3);
     const result = [];
     //Genero los divs que me llevan a cada pagina
-    for (let index = 0; index <= pages; index++) {
+    for (let index = 0; index < pages; index++) {
       result.push(
         <PageNumber
+          key={index}
           onClick={() => {
             goToPage(index + 1);
           }}

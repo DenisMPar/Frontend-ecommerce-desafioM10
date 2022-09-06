@@ -1,7 +1,7 @@
 import { SearchForm } from "components/search-form";
 import { SideBar } from "components/side-bar";
+import Link from "next/link";
 import { useRouter } from "next/router";
-
 import { type } from "os";
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
@@ -26,7 +26,11 @@ export const Header: React.FC<Props> = (props) => {
   return (
     <BaseHeader style={{ position: props.sticky ? "sticky" : "static" }}>
       <LogoAndButtonWrapper>
-        <WhiteLogoIcon></WhiteLogoIcon>
+        <Link href="/">
+          <div>
+            <WhiteLogoIcon />
+          </div>
+        </Link>
         <div onClick={toggleMenu}>
           <BurguerIcon></BurguerIcon>
         </div>
