@@ -5,4 +5,19 @@ export const BaseForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  @media screen and (min-width: 744px) {
+    flex-direction: row;
+  }
+`;
+export const FormInputWrapper = styled.div`
+  @media screen and (min-width: 744px) {
+    width: 100%;
+    flex-grow: 10;
+  }
+`;
+export const FormButtonWrapper = styled.div`
+  @media screen and (min-width: 744px) {
+    width: 30%;
+    flex-grow: 1;
+  }
 `;

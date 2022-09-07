@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { arrayBuffer } from "stream/consumers";
 import useSWR from "swr";
-import { PrimaryButton } from "ui/buttons";
+import { PrimaryButton, PrimaryButtonBig } from "ui/buttons";
 import { PageLoader, Spinner } from "ui/loader";
 import { BodyText, LargeTextBold, SubTitle, Title } from "ui/text";
 import {
@@ -58,13 +58,13 @@ export const ProductDetailPage: React.FC<Props> = (props) => {
             </ProductDetailTitle>
             <SubTitle style={{ margin: "0" }}>${data.Price}</SubTitle>
             <DetailButtonWrapper>
-              <PrimaryButton
+              <PrimaryButtonBig
                 onClick={() => {
                   buyProduct();
                 }}
               >
                 {loading ? <Spinner /> : "Comprar"}
-              </PrimaryButton>
+              </PrimaryButtonBig>
               {orderError ? "ups algo salio mal" : null}
             </DetailButtonWrapper>
             <BodyText>{data.Description}</BodyText>

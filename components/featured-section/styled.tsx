@@ -19,4 +19,9 @@ export const CardsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  @media screen and (min-width: 744px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 77px;
+  }
 `;

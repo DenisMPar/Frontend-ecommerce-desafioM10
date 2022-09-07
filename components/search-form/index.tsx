@@ -1,7 +1,7 @@
 import React from "react";
 import { SecondaryButton, TertiaryButton } from "ui/buttons";
 import Input from "ui/input";
-import { BaseForm } from "./styled";
+import { BaseForm, FormButtonWrapper, FormInputWrapper } from "./styled";
 import { useForm } from "react-hook-form";
 
 type Props = {
@@ -24,18 +24,22 @@ export const SearchForm: React.FC<Props> = ({
   } = useForm();
   return (
     <BaseForm onSubmit={handleSubmit(submit)} autoComplete={"off"}>
-      <Input
-        default={value}
-        name="query"
-        label=""
-        register={register}
-        placeHolder="Encontra tu producto"
-      ></Input>
-      {type == "primary" ? (
-        <SecondaryButton>Buscar</SecondaryButton>
-      ) : (
-        <TertiaryButton>Buscar</TertiaryButton>
-      )}
+      <FormInputWrapper>
+        <Input
+          default={value}
+          name="query"
+          label=""
+          register={register}
+          placeHolder="Encontra tu producto"
+        ></Input>
+      </FormInputWrapper>
+      <FormButtonWrapper>
+        {type == "primary" ? (
+          <SecondaryButton>Buscar</SecondaryButton>
+        ) : (
+          <TertiaryButton>Buscar</TertiaryButton>
+        )}
+      </FormButtonWrapper>
     </BaseForm>
   );
 };

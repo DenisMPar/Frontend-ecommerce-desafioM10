@@ -5,8 +5,19 @@ import { useRouter } from "next/router";
 import { type } from "os";
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
-import { BurguerIcon, LogoIcon, WhiteLogoIcon } from "ui/icons";
-import { BaseHeader, FormWrapper, LogoAndButtonWrapper } from "./styled";
+import { PrimaryButton } from "ui/buttons";
+import { ArrowDownIcon, BurguerIcon, LogoIcon, WhiteLogoIcon } from "ui/icons";
+import { BodyText, LargeText } from "ui/text";
+import {
+  ArrowWrapper,
+  BaseHeader,
+  BurgerWrapper,
+  FormWrapper,
+  IconContainer,
+  LogoAndButtonWrapper,
+  MenuButtonWrapper,
+  SideBarWrapper,
+} from "./styled";
 
 type Props = {
   form: boolean;
@@ -25,16 +36,26 @@ export const Header: React.FC<Props> = (props) => {
   }
   return (
     <BaseHeader style={{ position: props.sticky ? "sticky" : "static" }}>
-      <LogoAndButtonWrapper>
-        <Link href="/">
-          <div>
-            <WhiteLogoIcon />
-          </div>
-        </Link>
-        <div onClick={toggleMenu}>
-          <BurguerIcon></BurguerIcon>
-        </div>
-      </LogoAndButtonWrapper>
+      <Link href="/">
+        <IconContainer>
+          <WhiteLogoIcon />
+        </IconContainer>
+      </Link>
+      <BurgerWrapper onClick={toggleMenu}>
+        <BurguerIcon></BurguerIcon>
+      </BurgerWrapper>
+      <MenuButtonWrapper onClick={toggleMenu}>
+        <LargeText>Menu</LargeText>
+        <ArrowWrapper
+          style={
+            flag
+              ? { transform: `rotate(-180deg)`, transition: "0.6s ease-in-out" }
+              : { transform: ``, transition: "0.6s ease-in-out" }
+          }
+        >
+          <ArrowDownIcon></ArrowDownIcon>
+        </ArrowWrapper>
+      </MenuButtonWrapper>
       {props.form ? (
         <FormWrapper>
           <SearchForm submit={handleSubmit} type="secondary"></SearchForm>

@@ -6,6 +6,13 @@ export const DetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media screen and (min-width: 744px) {
+    margin: 90px auto 172px auto;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 39px;
+  }
 `;
 export const NotFoundWrapper = styled.div`
   width: 100%;
@@ -21,6 +28,9 @@ export const DetailImg = styled.img`
   height: 100%;
   width: 100%;
   max-height: 290px;
+  @media screen and (min-width: 744px) {
+    max-height: 400px;
+  }
 `;
 
 export const DetailDescriptionWrapper = styled.div`

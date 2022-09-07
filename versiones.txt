@@ -41,3 +41,7 @@ Se agrego un componente redirect to login, que muestra un redirect en caso que e
 
 beta 2.3
 Se agrego la lógica a la seccion de productos destacados
+beta 2.4
+Se agregaron las páginas de respuesta al pago dle user
+beta 2.5
+Se agregaron casi todos los estilos desktop

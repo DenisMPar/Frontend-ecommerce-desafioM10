@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ProfileFormWrapper = styled.form`
+  width: 100%;
   padding: 0;
   display: flex;
   flex-direction: column;

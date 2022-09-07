@@ -9,7 +9,7 @@ import useSWR from "swr";
 import { SecondaryButton } from "ui/buttons";
 import { Spinner } from "ui/loader";
 import { Title } from "ui/text";
-import { ProfilePageWrapper } from "./styled";
+import { ProfilePageWrapper, ProfileTitleWrapper } from "./styled";
 
 type Props = {
   children?: React.ReactNode;
@@ -19,11 +19,10 @@ export const ProfilePage: React.FC<Props> = ({ children }) => {
 
   return (
     <ProfilePageWrapper>
-      <Title>Perfil</Title>
+      <ProfileTitleWrapper>
+        <Title>Perfil</Title>
+      </ProfileTitleWrapper>
       <ProfileForm data={data}></ProfileForm>
-      <Link href={"/"}>
-        <SecondaryButton>Ir a la home</SecondaryButton>
-      </Link>
     </ProfilePageWrapper>
   );
 };

@@ -37,6 +37,11 @@
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width:744px){
+  .wrapper-big{
+    height: calc(100vh - 264px);
+  }
+}
 
 .lds-dual-ring-big {
   display: flex;

@@ -6,4 +6,7 @@ export const RedirectContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 744px) {
+    height: calc(100vh - 264px);
+  }
 `;

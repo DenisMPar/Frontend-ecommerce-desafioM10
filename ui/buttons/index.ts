@@ -21,6 +21,13 @@ export const PrimaryButton = styled(Button)`
     background-color: #76cc88;
   }
 `;
+export const PrimaryButtonBig = styled(Button)`
+  font-size: 24px;
+  background-color: #6a994e;
+  &:hover {
+    background-color: #76cc88;
+  }
+`;
 export const SecondaryButton = styled(Button)`
   background-color: #3c82d6;
   &:hover {

@@ -10,7 +10,7 @@ export const LoginInputWrapper = styled.div`
   height: 60px;
 `;
 export const CodeInputWrapper = styled.div`
-  height: 45px;
+  height: 60px;
 `;
 export const LoginButtonWrapper = styled.div`
   height: 50px;
