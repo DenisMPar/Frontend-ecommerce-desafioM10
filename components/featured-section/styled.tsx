@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FeaturedWrapper = styled.div`
   width: 100%;
-  background-color: #f06543;
+  background-color: #a5a58d;
   text-align: center;
   padding-bottom: 100px;
 `;

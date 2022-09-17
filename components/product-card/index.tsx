@@ -24,7 +24,7 @@ export const ProductCard: React.FC<Props> = (props) => {
   return (
     <CardWrapper onClick={handleClick}>
       <CardImgWrapper>
-        <CardImg src={props.url}></CardImg>
+        <CardImg alt={props.title + "-image"} src={props.url}></CardImg>
       </CardImgWrapper>
       <CardTextWrapper>
         <LargeText>{props.title}</LargeText>

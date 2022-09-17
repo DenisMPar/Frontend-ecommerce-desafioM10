@@ -7,12 +7,16 @@ import { useEffect } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { LargeText } from "ui/text";
 import useSWR from "swr";
+import Head from "next/head";
 
 const Search: NextPage = () => {
   const router = useRouter();
   const { query } = router.query;
   return (
     <Layout form={true}>
+      <Head>
+        <title>Resultados - compralo</title>
+      </Head>
       <SearchPage query={query as string}></SearchPage>
     </Layout>
   );

@@ -1,5 +1,6 @@
 import { Layout } from "components/layout";
 import type { NextPage } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import { PrimaryButton } from "ui/buttons";
 import { BodyText, LargeText, Title } from "ui/text";
@@ -7,6 +8,9 @@ import { BodyText, LargeText, Title } from "ui/text";
 const PaymentFailure: NextPage = () => {
   return (
     <Layout form={false} sticky={false}>
+      <Head>
+        <Title>Pago fallido - compralo</Title>
+      </Head>
       <div
         style={{
           padding: "0 16px 40px 16px",

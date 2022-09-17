@@ -46,15 +46,24 @@ export const Header: React.FC<Props> = (props) => {
       </BurgerWrapper>
       <MenuButtonWrapper onClick={toggleMenu}>
         <LargeText>Menu</LargeText>
-        <ArrowWrapper
-          style={
-            flag
-              ? { transform: `rotate(-180deg)`, transition: "0.6s ease-in-out" }
-              : { transform: ``, transition: "0.6s ease-in-out" }
-          }
-        >
-          <ArrowDownIcon></ArrowDownIcon>
-        </ArrowWrapper>
+        {flag ? (
+          <ArrowWrapper
+            style={{
+              transform: `rotate(-180deg)`,
+              transition: "0.6s ease-in-out",
+            }}
+          >
+            <ArrowDownIcon></ArrowDownIcon>
+          </ArrowWrapper>
+        ) : (
+          <ArrowWrapper
+            style={{
+              transition: "0.6s ease-in-out",
+            }}
+          >
+            <ArrowDownIcon></ArrowDownIcon>
+          </ArrowWrapper>
+        )}
       </MenuButtonWrapper>
       {props.form ? (
         <FormWrapper>

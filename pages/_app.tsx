@@ -1,4 +1,3 @@
-import "lib/index.css";
 import type { AppProps } from "next/app";
 import { RecoilRoot } from "recoil";
 

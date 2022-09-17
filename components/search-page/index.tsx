@@ -2,15 +2,17 @@ import { FeaturedSection } from "components/featured-section";
 import { MainSection } from "components/main-section";
 import { ProductCard } from "components/product-card";
 import React, { useState } from "react";
-import { BodyText, TinyText } from "ui/text";
+import { BodyText, LargeText, SubTitle, TinyText, Title } from "ui/text";
 import {
   PageNumber,
+  ProductNotFoundWrapper,
   ProductsCardPagesWrapper,
   ProductsCardWrapper,
   SearchWrapper,
 } from "./styled";
 import useSWR from "swr";
 import { fetchApi } from "lib/api";
+import { PageLoader, Spinner } from "ui/loader";
 
 type Props = {
   children?: React.ReactNode;
@@ -64,6 +66,7 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
     }
     return result;
   }
+  console.log(results);
 
   return (
     <SearchWrapper>
@@ -72,19 +75,26 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
       ) : (
         <ProductsCardWrapper>
           {results ? (
-            results.map((item: any) => {
-              return (
-                <ProductCard
-                  key={item.objectID}
-                  productId={item.objectID}
-                  url={item.Images[0]?.url}
-                  title={item.Name}
-                  price={item.Price}
-                />
-              );
-            })
+            results.length > 0 ? (
+              results.map((item: any) => {
+                return (
+                  <ProductCard
+                    key={item.objectID}
+                    productId={item.objectID}
+                    url={item.Images[0]?.url}
+                    title={item.Name}
+                    price={item.Price}
+                  />
+                );
+              })
+            ) : (
+              <ProductNotFoundWrapper>
+                <SubTitle>No se encontraron resultados</SubTitle>
+                <BodyText>Sugerencias: Silla, Mesa, Lámpara.</BodyText>
+              </ProductNotFoundWrapper>
+            )
           ) : (
-            <div>loading</div>
+            <Spinner></Spinner>
           )}
         </ProductsCardWrapper>
       )}
