@@ -48,3 +48,6 @@ Se agregaron casi todos los estilos desktop
 beta 2.6
 Se agregó critical css, se modifico la imagen de fondo por un next image para mejorar el rendimiento
 Se agregaron los titles de las pages
+
+version 1.0
+Página andando, se agrego server side rendering y se acomodaron los estilos del menu desktop

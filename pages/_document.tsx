@@ -34,6 +34,10 @@ export default class MyDocument extends Document {
       <Html lang="es">
         <Head>
           <link rel="stylesheet" href="/base.css" />
+          <meta
+            name="description"
+            content="Compralo Mueblería. Compra los mejores muebles a los mejores precios"
+          ></meta>
         </Head>
         <body>
           <Main />

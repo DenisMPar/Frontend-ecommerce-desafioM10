@@ -25,6 +25,7 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
   );
 
   const results = data?.results;
+  console.log(data);
 
   //recibo el numero de pag
   function goToPage(page: number) {
@@ -45,7 +46,7 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
     const total = data?.pagination.total;
 
     //obtengo el total de paginas dividiendo por 3 productos por pagina
-    const pages = Math.floor(total / 3);
+    const pages = Math.ceil(total / 3);
     const result = [];
     //Genero los divs que me llevan a cada pagina
     for (let index = 0; index < pages; index++) {
@@ -86,7 +87,7 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
             ) : (
               <ProductNotFoundWrapper>
                 <SubTitle>No se encontraron resultados</SubTitle>
-                <BodyText>Sugerencias: Silla, Mesa, Lámpara.</BodyText>
+                <BodyText>Sugerencias: Silla, Mesa, Alfombra.</BodyText>
               </ProductNotFoundWrapper>
             )
           ) : (
