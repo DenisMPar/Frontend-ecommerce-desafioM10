@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { patchUserData } from "lib/api";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { PrimaryButton } from "ui/buttons";
 import Input from "ui/input";
+import { Spinner } from "ui/loader";
 import { TinyText } from "ui/text";
 import {
   ProfileButtonWrapper,
   ProfileFormWrapper,
   ProfileInputWrapper,
 } from "./styled";
-import { useForm } from "react-hook-form";
-import { patchUserData } from "lib/api";
-import { truncateSync } from "fs";
-import { useRouter } from "next/router";
-import { Spinner } from "ui/loader";
 
 type Props = {
   children?: React.ReactNode;

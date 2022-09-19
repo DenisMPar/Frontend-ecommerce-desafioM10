@@ -1,8 +1,9 @@
-import { FeaturedSection } from "components/featured-section";
-import { MainSection } from "components/main-section";
 import { ProductCard } from "components/product-card";
+import { fetchApi } from "lib/api";
 import React, { useState } from "react";
-import { BodyText, LargeText, SubTitle, TinyText, Title } from "ui/text";
+import useSWR from "swr";
+import { Spinner } from "ui/loader";
+import { BodyText, SubTitle } from "ui/text";
 import {
   PageNumber,
   ProductNotFoundWrapper,
@@ -10,9 +11,6 @@ import {
   ProductsCardWrapper,
   SearchWrapper,
 } from "./styled";
-import useSWR from "swr";
-import { fetchApi } from "lib/api";
-import { PageLoader, Spinner } from "ui/loader";
 
 type Props = {
   children?: React.ReactNode;
@@ -27,7 +25,6 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
   );
 
   const results = data?.results;
-  console.log(data);
 
   //recibo el numero de pag
   function goToPage(page: number) {
@@ -66,7 +63,6 @@ export const SearchPage: React.FC<Props> = ({ children, query }) => {
     }
     return result;
   }
-  console.log(results);
 
   return (
     <SearchWrapper>

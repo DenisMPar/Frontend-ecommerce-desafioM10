@@ -45,3 +45,6 @@ beta 2.4
 Se agregaron las páginas de respuesta al pago dle user
 beta 2.5
 Se agregaron casi todos los estilos desktop
+beta 2.6
+Se agregó critical css, se modifico la imagen de fondo por un next image para mejorar el rendimiento
+Se agregaron los titles de las pages

@@ -1,18 +1,17 @@
-import { userMailState } from "hooks/hooks";
-import { removeToken, setToken } from "lib/api";
+import { useCheckToken, userMailState } from "hooks/hooks";
+import { removeToken } from "lib/api";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useTransition, useSpring } from "react-spring";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { on } from "stream";
-import { CancelButton, PrimaryButton, SecondaryButton } from "ui/buttons";
+import { useTransition } from "react-spring";
+import { useRecoilState } from "recoil";
+import { CancelButton } from "ui/buttons";
 import { TinyText } from "ui/text";
 import {
-  SideBarContainer,
-  Icon,
   CloseIcon,
-  SideBarMenu,
+  Icon,
+  SideBarContainer,
   SidebarLink,
+  SideBarMenu,
   SideBarMenuWrap,
   UserSessionWrapper,
 } from "./styled";
@@ -24,6 +23,7 @@ type props = {
 
 export const SideBar = (props: props) => {
   const [userMail, setUserMail] = useRecoilState(userMailState);
+  const token = useCheckToken();
   const router = useRouter();
 
   const menuTranstition = useTransition(props.show, {
@@ -85,7 +85,7 @@ export const SideBar = (props: props) => {
             {userSessionTransition((style, item) =>
               item ? (
                 <>
-                  {userMail ? (
+                  {userMail && token ? (
                     <UserSessionWrapper style={style}>
                       <TinyText>{userMail}</TinyText>
                       <CancelButton onClick={handleLogOut}>

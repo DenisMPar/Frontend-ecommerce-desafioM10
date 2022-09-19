@@ -1,5 +1,3 @@
-import { type } from "os";
-
 interface Options extends RequestInit {
   headers?: (Headers & { Authorization: string }) | {};
   body?: string;
@@ -83,7 +81,10 @@ export function setToken(token: string) {
   localStorage.setItem("token", token);
 }
 export async function getSettedToken() {
-  return await localStorage.getItem("token");
+  if (typeof window !== "undefined") {
+    return await localStorage.getItem("token");
+  }
+  return false;
 }
 export function removeToken() {
   localStorage.removeItem("token");

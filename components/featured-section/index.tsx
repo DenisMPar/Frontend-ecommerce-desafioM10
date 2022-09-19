@@ -1,16 +1,13 @@
 import { ProductCard } from "components/product-card";
-import { fetchApi } from "lib/api";
 import React from "react";
-import useSWR from "swr";
 import { SubTitle } from "ui/text";
 import { CardsWrapper, FeaturedWrapper, SectionTitleWrapper } from "./styled";
 
 type Props = {
   children?: React.ReactNode;
+  data: any;
 };
-export const FeaturedSection: React.FC<Props> = ({ children }) => {
-  const { data, error, mutate } = useSWR("/products/featured", fetchApi);
-
+export const FeaturedSection: React.FC<Props> = ({ children, data }) => {
   return (
     <FeaturedWrapper>
       <SectionTitleWrapper>

@@ -1,7 +1,5 @@
-import { fetchApi } from "lib/api";
 import { useRouter } from "next/router";
 import React from "react";
-import useSWR from "swr";
 import { LargeText, SubTitle } from "ui/text";
 import {
   CardImg,

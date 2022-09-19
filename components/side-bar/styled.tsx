@@ -13,10 +13,9 @@ export const SideBarContainer = styled(animated.aside)`
   align-items: center;
   left: 0;
   @media screen and (min-width: 744px) {
-    height: 300px;
+    max-height: 300px;
     margin-top: 84px;
     grid-template-rows: 6fr 1fr;
-    position: absolute;
     left: auto;
     right: 0;
     max-width: 300px;

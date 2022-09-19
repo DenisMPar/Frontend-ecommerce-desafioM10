@@ -1,5 +1,5 @@
-import { ProductCard } from "components/product-card";
 import type { NextPage } from "next";
+import { useForm } from "react-hook-form";
 import { CancelButton, PrimaryButton, SecondaryButton } from "ui/buttons";
 import { LogoIcon } from "ui/icons";
 import Input from "ui/input";
@@ -12,7 +12,6 @@ import {
   TinyText,
   Title,
 } from "ui/text";
-import { useForm } from "react-hook-form";
 
 const Ui: NextPage = () => {
   const {

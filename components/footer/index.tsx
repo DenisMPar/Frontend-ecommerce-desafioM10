@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { InstagramIcon, TwitterIcon, WhiteLogoIcon } from "ui/icons";
-import { BodyText, LargeText, LargeTextBold, TinyText } from "ui/text";
+import { BodyText, LargeTextBold } from "ui/text";
 import {
   FooterWrapper,
   SocialMediaLinkWrapper,

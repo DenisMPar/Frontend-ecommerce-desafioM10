@@ -1,13 +1,7 @@
 import { ProfileForm } from "components/profile-form";
-import { log } from "console";
-import { useCheckToken } from "hooks/hooks";
-import { fetchApi, getSettedToken } from "lib/api";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { fetchApi } from "lib/api";
+import React from "react";
 import useSWR from "swr";
-import { SecondaryButton } from "ui/buttons";
-import { Spinner } from "ui/loader";
 import { Title } from "ui/text";
 import { ProfilePageWrapper, ProfileTitleWrapper } from "./styled";
 

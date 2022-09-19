@@ -2,21 +2,16 @@ import { SearchForm } from "components/search-form";
 import { SideBar } from "components/side-bar";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { type } from "os";
 import React, { useState } from "react";
-import { useRecoilValue } from "recoil";
-import { PrimaryButton } from "ui/buttons";
-import { ArrowDownIcon, BurguerIcon, LogoIcon, WhiteLogoIcon } from "ui/icons";
-import { BodyText, LargeText } from "ui/text";
+import { ArrowDownIcon, BurguerIcon, WhiteLogoIcon } from "ui/icons";
+import { LargeText } from "ui/text";
 import {
   ArrowWrapper,
   BaseHeader,
   BurgerWrapper,
   FormWrapper,
   IconContainer,
-  LogoAndButtonWrapper,
   MenuButtonWrapper,
-  SideBarWrapper,
 } from "./styled";
 
 type Props = {

@@ -16,10 +16,14 @@ export const DetailWrapper = styled.div`
 `;
 export const NotFoundWrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 510px);
+  text-align: center;
+  height: calc(100vh - 488px);
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 744px) {
+    height: calc(100vh - 264px);
+  }
 `;
 export const DetailImgWrapper = styled.div`
   height: 100%;

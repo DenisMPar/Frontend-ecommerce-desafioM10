@@ -38,9 +38,10 @@ export const MenuButtonWrapper = styled.div`
   cursor: pointer;
   color: #fff;
   font-size: 32px;
-  width: 160px;
+  padding: 8px;
   place-self: end;
   display: none;
+  border-radius: 8px;
   @media screen and (min-width: 744px) {
     grid-column-start: 3;
     grid-column-end: 4;
@@ -48,6 +49,9 @@ export const MenuButtonWrapper = styled.div`
     display: flex;
     justify-content: center;
     gap: 5px;
+  }
+  &:hover {
+    background-color: #212325;
   }
 `;
 export const ArrowWrapper = styled.div``;

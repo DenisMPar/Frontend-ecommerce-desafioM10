@@ -1,8 +1,8 @@
 import { LoginForm } from "components/login-form";
 import { useCheckToken, userMailState } from "hooks/hooks";
-import { getAuth, getSettedToken, getToken, setToken } from "lib/api";
+import { getAuth, getToken } from "lib/api";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { Spinner } from "ui/loader";
 import { Title } from "ui/text";

@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 import { BaseInput, Label } from "./styled";
-import { UseFormRegister, FieldValues, useForm } from "react-hook-form";
 type props = {
   setValue?: any;
   name: string;

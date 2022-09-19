@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const MainSectionWrapper = styled.div`
+  color: #fff;
   width: 100%;
   height: calc(100vh - 84px);
   display: flex;
@@ -9,10 +10,7 @@ export const MainSectionWrapper = styled.div`
   align-items: center;
   text-align: center;
   padding: 0 36px;
-  @media screen and (min-width: 882px) {
-    background-color: #00000075;
-    color: #fff;
-  }
+  background-color: #00000075;
 `;
 export const TitleWrapper = styled.div`
   width: 100%;

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 import { PrimaryButton } from "ui/buttons";
 import Input from "ui/input";
 import { TinyText } from "ui/text";
@@ -8,7 +9,6 @@ import {
   LoginFormWrapper,
   LoginInputWrapper,
 } from "./styled";
-import { useForm } from "react-hook-form";
 
 type Props = {
   children?: React.ReactNode;

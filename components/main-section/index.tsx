@@ -1,8 +1,6 @@
 import { SearchForm } from "components/search-form";
-
 import { useRouter } from "next/router";
 import React from "react";
-import { useSetRecoilState } from "recoil";
 import { Title } from "ui/text";
 import { MainSectionWrapper, TitleWrapper } from "./styled";
 

@@ -1,5 +1,4 @@
 import css from "./Index.module.css";
-import { FaSpinner } from "react-icons/fa";
 
 //componente que muestra un spinner de carga
 function Spinner() {

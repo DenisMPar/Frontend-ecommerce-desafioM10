@@ -6,12 +6,14 @@ import { BackgroundDiv, ContentDiv, HomeWrapper } from "./styled";
 
 type Props = {
   children?: React.ReactNode;
+  data: any;
 };
-export const HomePage: React.FC<Props> = ({ children }) => {
+export const HomePage: React.FC<Props> = ({ children, data }) => {
   return (
     <HomeWrapper>
       <BackgroundDiv>
         <Image
+          priority={true}
           objectFit="cover"
           layout="fill"
           src={"/background.webp"}
@@ -22,7 +24,7 @@ export const HomePage: React.FC<Props> = ({ children }) => {
       </BackgroundDiv>
       <ContentDiv>
         <MainSection></MainSection>
-        <FeaturedSection></FeaturedSection>
+        <FeaturedSection data={data}></FeaturedSection>
       </ContentDiv>
     </HomeWrapper>
   );
