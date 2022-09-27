@@ -51,3 +51,6 @@ Se agregaron los titles de las pages
 
 version 1.0
 Página andando, se agrego server side rendering y se acomodaron los estilos del menu desktop
+
+version 1.1
+Se arreglo el páginado de los products y se cambio la sugerencia cuando no encuentra results

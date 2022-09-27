@@ -24,6 +24,8 @@ export const ProductDetailPage: React.FC<Props> = (props) => {
   const [loading, setLoading] = useState(false);
   const [orderError, setOrderError] = useState(false);
 
+  console.log(props);
+
   async function buyProduct() {
     setOrderError(false);
     setLoading(true);
@@ -32,7 +34,7 @@ export const ProductDetailPage: React.FC<Props> = (props) => {
       router.push("/login");
     }
     try {
-      const res = await getOrderUrl(props.data.productId);
+      const res = await getOrderUrl(props.data.objectID);
       window.location.href = res.url;
     } catch (error) {
       setOrderError(true);
