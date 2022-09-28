@@ -58,3 +58,5 @@ version 1.2
 Se arreglo bug en el id de compra del producto
 version 1.3
 Se arreglaron los estilos de las paginas de payment
+version 1.4
+Se movio el contenido de las paginas payment a components
