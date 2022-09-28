@@ -4,36 +4,29 @@ import Head from "next/head";
 import Link from "next/link";
 import { PrimaryButton } from "ui/buttons";
 import { BodyText, LargeText, Title } from "ui/text";
+import { ButtonContainer, Root, TextContainer } from "./styled";
 
 const PaymentFailure: NextPage = () => {
   return (
-    <Layout form={false} sticky={false}>
+    <>
       <Head>
-        <Title>Pago fallido - compralo</Title>
+        <title>Pago fallido - compralo</title>
       </Head>
-      <div
-        style={{
-          padding: "0 16px 40px 16px",
-        }}
-      >
-        <Title>El pago falló</Title>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "16px",
-            height: "100%",
-            minHeight: "30vh",
-          }}
-        >
-          <LargeText>No pudimos recibir el pago.</LargeText>
-          <LargeText>Por favor vuelve a intentarlo.</LargeText>
-          <Link href="/">
-            <PrimaryButton>Ir al inicio</PrimaryButton>
-          </Link>
-        </div>
-      </div>
-    </Layout>
+      <Layout form={false} sticky={false}>
+        <Root>
+          <Title>El pago falló</Title>
+          <TextContainer>
+            <LargeText>No pudimos recibir el pago.</LargeText>
+            <LargeText>Por favor vuelve a intentarlo.</LargeText>
+            <ButtonContainer>
+              <Link href="/">
+                <PrimaryButton>Ir al inicio</PrimaryButton>
+              </Link>
+            </ButtonContainer>
+          </TextContainer>
+        </Root>
+      </Layout>
+    </>
   );
 };
 

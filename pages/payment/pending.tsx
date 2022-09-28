@@ -4,39 +4,32 @@ import Head from "next/head";
 import Link from "next/link";
 import { PrimaryButton } from "ui/buttons";
 import { BodyText, LargeText, Title } from "ui/text";
+import { ButtonContainer, Root, TextContainer } from "./styled";
 
 const PaymentPending: NextPage = () => {
   return (
-    <Layout form={false} sticky={false}>
+    <>
       <Head>
-        <Title>Pago pendiente - compralo</Title>
+        <title>Pago pendiente</title>
       </Head>
-      <div
-        style={{
-          padding: "0 16px 40px 16px",
-        }}
-      >
-        <Title>El pago esta pendiente</Title>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "16px",
-            height: "100%",
-            minHeight: "20vh",
-          }}
-        >
-          <LargeText>
-            En cuanto recibamos la confirmacion de pago, nos comunicaremos por
-            mail para coordinar el envío.
-          </LargeText>
-          <LargeText>Muchas gracias por tu compra.</LargeText>
-          <Link href="/">
-            <PrimaryButton>Seguir comprando</PrimaryButton>
-          </Link>
-        </div>
-      </div>
-    </Layout>
+      <Layout form={false} sticky={false}>
+        <Root style={{}}>
+          <Title>El pago esta pendiente</Title>
+          <TextContainer>
+            <LargeText>
+              En cuanto recibamos la confirmacion de pago, nos comunicaremos por
+              mail para coordinar el envío.
+            </LargeText>
+            <LargeText>Muchas gracias por tu compra.</LargeText>
+            <ButtonContainer>
+              <Link href="/">
+                <PrimaryButton>Seguir comprando</PrimaryButton>
+              </Link>
+            </ButtonContainer>
+          </TextContainer>
+        </Root>
+      </Layout>
+    </>
   );
 };
 
