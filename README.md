@@ -8,6 +8,7 @@ Posee excelentes métricas en auditoría de LightHouse.
 # Tecnologías Usadas:
 - React.
 - NextJs.
+- Typescript.
 - Styled-Components
 - SWR
 - Recoil
